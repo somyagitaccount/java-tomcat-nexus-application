@@ -9,7 +9,7 @@ pipeline {
         {
           steps
           {
-            git branch: 'master', url: 'https://github.com/somyagitaccount/Java-tomcat-application-.git/'
+            git branch: 'master', url: 'https://github.com/somyagitaccount/java-tomcat-nexus-application.git/'
           }
         }
 /// build the java application using maven ///
