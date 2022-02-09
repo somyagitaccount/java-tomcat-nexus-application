@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+
+  tasks:        
+# Deploy artifacts from nexus server to the client machine
+
+  - name:                 Download artifact from nexus server
+    maven_artifact:
+      repository_url:     "http://54.72.29.114:8081/repository/java_application_artifacts/"
+      group_id:           "com.example"
+      artifact_id:        "java-tomcat-maven-example"
+      version:            "1.0-SNAPSHOT"
+      extension:          "war"
+      dest:               "/opt/tomcat/webapps"
+
+  - name: Change ownership
+    file:
+      path: /opt/tomcat/webapps/java-tomcat-maven-example-1.0-SNAPSHOT.war
+      owner: tomcat
+      group: tomcat
+      mode: "u+rwx,g+rx,o=rx"
+
+
+  - name: Start and enable Tomcat service
+    systemd:
+      name: tomcat
+      state: restarted
+      enabled: true
+      daemon_reload: true
+

@@ -1,0 +1,64 @@
+pipeline {
+  agent any
+    tools
+    {
+       maven "maven"
+    }
+     stages {
+       stage('checkout') 
+        {
+          steps
+          {
+            git branch: 'master', url: 'https://github.com/somyagitaccount/Java-tomcat-application-.git/'
+          }
+        }
+/// build the java application using maven ///
+
+        stage('build code')
+        {
+          steps
+          {
+            sh 'mvn clean install'
+          }
+        }
+          
+        stage('upload the artifacts on nexus') 
+        {
+          steps
+          {
+            nexusArtifactUploader artifacts: 
+                  [
+                    [
+                      artifactId: 'java-tomcat-maven-example', 
+                      classifier: '', 
+                      file: "target/java-tomcat-maven-example.war", 
+                      type: 'war'
+                    ]
+
+                  ], 
+                      credentialsId: '9f481fa2-e206-480d-9b8a-2594dca95360', 
+                      groupId: 'com.example', nexusUrl: '54.194.74.154:8081', 
+                      nexusVersion: 'nexus2', 
+                      protocol: 'http', 
+                      repository: 'java_application_artifacts/', 
+                      version: "1.0-SNAPSHOT"
+          }
+        }
+
+     }
+}
+
+
+        // stage('Ansible Deploy') {
+
+        //     steps {
+                
+        //         sh "ansible-playbook main.yml "
+        
+            
+        //     }
+        // }
+
+      
+
+
