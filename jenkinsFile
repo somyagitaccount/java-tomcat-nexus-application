@@ -44,21 +44,21 @@ pipeline {
                       version: "1.0-SNAPSHOT"
           }
         }
+      stage('Ansible Deploy') 
+      {
+        steps 
+        {
+          sh "ansible-playbook main.yml "
+        
+        }
+      }
 
-     }
+
+    }
 }
 
 
-        // stage('Ansible Deploy') {
-
-        //     steps {
-                
-        //         sh "ansible-playbook main.yml "
         
-            
-        //     }
-        // }
-
       
 
 
