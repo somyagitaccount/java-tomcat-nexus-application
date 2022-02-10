@@ -33,7 +33,7 @@
       state: present
 
   - name: install lxml
-    pip3:
+    apt:
       name: lxml 
 
   - name: add tomcat group
