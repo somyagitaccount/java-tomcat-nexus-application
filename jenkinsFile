@@ -41,7 +41,7 @@ pipeline {
                       nexusVersion: 'nexus3', 
                       protocol: 'http', 
                       repository: 'java_application_artifacts/', 
-                      version: "1.0-SNAPSHOT"
+                      version: "1"
           }
         }
       stage('Ansible Deploy') 
