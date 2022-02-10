@@ -27,14 +27,14 @@
       name: php
       state: present
 
-  - name: install pip3
-    apt:
-      name: python3-pip
-      state: present
+  # - name: install pip3
+  #   apt:
+  #     name: python3-pip
+  #     state: present
 
-  - name: install lxml
-    pip3:
-      name: lxml 
+  # - name: install lxml
+  #   pip3:
+  #     name: lxml 
 
   - name: add tomcat group
     group:
