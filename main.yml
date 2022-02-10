@@ -32,9 +32,9 @@
       name: python3-pip
       state: present
 
-  # - name: install lxml
-  #   pip3:
-  #     name: lxml 
+  - name: install lxml
+    pip3:
+      name: lxml 
 
   - name: add tomcat group
     group:
