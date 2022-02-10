@@ -98,13 +98,13 @@
       repository_url:     "http://52.16.226.190:8081/repository/java_application_artifacts/"
       group_id:           "com.example"
       artifact_id:        "java-tomcat-maven-example"
-      version:            "1"
+      version:            "1.0-SNAPSHOT"
       extension:          "war"
       dest:               "/opt/tomcat/webapps"
 
   - name: Change ownership
     file:
-      path: /opt/tomcat/webapps/java-tomcat-maven-example-1.war
+      path: /opt/tomcat/webapps/java-tomcat-maven-example-1.0-SNAPSHOT.war
       owner: tomcat
       group: tomcat
       mode: "u+rwx,g+rx,o=rx"
