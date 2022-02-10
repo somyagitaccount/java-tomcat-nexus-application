@@ -9,7 +9,7 @@ pipeline {
         {
           steps
           {
-            git branch: 'master', url: 'https://github.com/somyagitaccount/java-tomcat-nexus-application.git/'
+            git branch: 'main', url: 'https://github.com/somyagitaccount/java-tomcat-nexus-application.git/'
           }
         }
 /// build the java application using maven ///
@@ -36,9 +36,9 @@ pipeline {
                     ]
 
                   ], 
-                      credentialsId: '9f481fa2-e206-480d-9b8a-2594dca95360', 
+                      credentialsId: 'nexus-cred', 
                       groupId: 'com.example', nexusUrl: '52.16.226.190:8081', 
-                      nexusVersion: 'nexus2', 
+                      nexusVersion: 'nexus3', 
                       protocol: 'http', 
                       repository: 'java_application_artifacts/', 
                       version: "1.0-SNAPSHOT"
