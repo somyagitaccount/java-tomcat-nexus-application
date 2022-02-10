@@ -8,7 +8,7 @@
 
   - name:                 Download artifact from nexus server
     maven_artifact:
-      repository_url:     "http://54.72.29.114:8081/repository/java_application_artifacts/"
+      repository_url:     "http://52.16.226.190:8081/repository/java_application_artifacts/"
       group_id:           "com.example"
       artifact_id:        "java-tomcat-maven-example"
       version:            "1.0-SNAPSHOT"
