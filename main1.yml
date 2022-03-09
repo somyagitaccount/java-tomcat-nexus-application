@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+  # Deploy artifacts from nexus server to the client machine
+
+  - name:                 Download artifact from nexus server
+    maven_artifact:
+      repository_url:     "http://3.250.162.129:8081/repository/java_application_artifacts/"
+      group_id:           "com.example"
+      artifact_id:        "java-tomcat-maven-example"
+      version:            "1"
+      extension:          "war"
+      dest:               "/opt/tomcat/webapps"
+
