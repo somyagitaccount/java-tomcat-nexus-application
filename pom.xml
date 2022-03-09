@@ -8,6 +8,18 @@
   <name>hello Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
+  <distributionManagement>
+   <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://3.250.76.141:8081/repository/maven-snapshots/</url>
+   </snapshotRepository>
+   <repository>
+      <id>nexus-releases</id>
+      <url>http://3.250.76.141:8081/repository/maven-releases/</url>
+   </repository>
+</distributionManagement>
+
+  
   <properties>
   <sonar.organization>somyagitaccount</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
