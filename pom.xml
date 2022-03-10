@@ -23,6 +23,7 @@
   <properties>
   <sonar.organization>somyagitaccount</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.projectKey>somyagitaccount_java-tomcat-nexus-application</sonar.projectKey>
 </properties>
   <dependencies>
     <dependency>
