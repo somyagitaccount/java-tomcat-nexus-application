@@ -15,7 +15,7 @@
    </snapshotRepository>
    <repository>
       <id>nexus-releases</id>
-      <urlhttp://54.75.205.215:8081/repository/maven-releases/</url>
+      <url>http://54.75.205.215:8081/repository/maven-releases/</url>
    </repository>
 </distributionManagement>
 
